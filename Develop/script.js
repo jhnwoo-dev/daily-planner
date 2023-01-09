@@ -14,27 +14,6 @@ var hourBlock = [
     [$("#hour-17")],
 ];
 
-// var hour09 = $("#hour-09");
-// var hour10 = $("#hour-10");
-// var hour11 = $("#hour-11");
-// var hour12 = $("#hour-12");
-// var hour13 = $("#hour-13");
-// var hour14 = $("#hour-14");
-// var hour15 = $("#hour-15");
-// var hour16 = $("#hour-16");
-// var hour17 = $("#hour-17");
-
-// var hourBlock = [
-//     hour09,
-//     hour10,
-//     hour11,
-//     hour12,
-//     hour13,
-//     hour14,
-//     hour15,
-//     hour16,
-//     hour17,
-// ];
 $(function () {
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
@@ -49,7 +28,7 @@ $(function () {
         var itemArray = [];
 
         for (i = 0; i < 9; i++) {
-            let textInput = containerDiv
+            var textInput = containerDiv
                 .children()
                 .eq(i)
                 .children(".description")
@@ -70,33 +49,43 @@ $(function () {
     function hourCheck() {
         var currentHour = dayjs().format("HH");
 
-        console.log(hourBlock);
-
         for (i = 0; i < hourBlock.length; i++) {
-            // var blockHour = hourBlock[i][0][0];
-            // console.log(hourBlock[i][0][0].id);
-            // console.log("======");
-            // console.log("hour-" + currentHour);
+            var blockHour = hourBlock[i][0];
 
             if (hourBlock[i][0][0].id == "hour-" + currentHour) {
-                $("hour-9").addClass("present");
-                console.log("present");
+                blockHour.addClass("present");
             } else if (hourBlock[i][0][0].id < "hour-" + currentHour) {
-                $("hour-9").addClass("past");
-                console.log("past");
+                blockHour.addClass("past");
             } else {
-                $("hour-9").addClass("future");
-                console.log("future");
+                blockHour.addClass("future");
             }
         }
     }
-
     hourCheck();
+
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
-    var savedItems = JSON.parse(localStorage.getItem("saveText"));
+    function grabSaved() {
+        var containerDiv = $("#container");
+        var savedItems = JSON.parse(localStorage.getItem("savedText"));
 
+        if (savedItems != null) {
+            for (i = 0; i < 9; i++) {
+                var textInput = containerDiv
+                    .children()
+                    .eq(i)
+                    .children(".description");
+
+                textInput.text(savedItems[i]);
+            }
+        } else {
+            console.log("No saved data yet.");
+        }
+    }
+    grabSaved();
+
+    setInterval(hourCheck, 1000);
     // TODO: Add code to display the current date in the header of the page.
     var today = dayjs().format("dddd, MMMM D, YYYY");
     $("#currentDay").text(today);
