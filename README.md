@@ -2,7 +2,7 @@
 
 ## Description
 
-The motivation behind this project was to create an application that would be able to save local data and recall the information in an organized manner to allow users to plan out their schedule. This project was built to practice using JQuery along with some JavaScript to produce a usable planner that also keeps track of the date and time relative to the schedule on the planner. This solves the need of an individual who may need a planner to keep an organized schedule of what they need to accomplish in an 8 hour day. From the help of a classmate, Benjamin Laubach, I learned how to better walk down the tree of an element to utilize methods. I also learned more regarding the methods of utilizing local storage.
+The motivation behind this project was to create an application that would be able to save local data and recall the information in an organized manner to allow users to plan out their schedule. This project was built to practice using JQuery along with some JavaScript to produce a usable planner that also keeps track of the date and time relative to the schedule on the planner. This solves the need of an individual who may need a planner to keep an organized schedule of what they need to accomplish in an 8 hour day. From the help of a classmate, Benjamin Laubach, I learned how to better walk down the tree of an element to utilize methods. I also learned more regarding the methods of utilizing local storage. Another classmate, Andy Barringer, helped me better understand the process of setting up "if" statements and how to compare aspects of an element to a known variable.
 
 ## Installation
 
@@ -33,3 +33,4 @@ If you are viewing the application during one of the time slots, that time slot 
 ## Credits
 
 Benjamin Laubach - UW Coding Bootcamp Student
+Andy Barringer - UW Cpding Bootcamp Student
