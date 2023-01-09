@@ -33,4 +33,4 @@ If you are viewing the application during one of the time slots, that time slot 
 ## Credits
 
 Benjamin Laubach - UW Coding Bootcamp Student
-Andy Barringer - UW Cpding Bootcamp Student
+Andy Barringer - UW Coding Bootcamp Student
